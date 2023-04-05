@@ -1,0 +1,274 @@
+$background-color: #F2F2F2;
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin flex-row {
+    display: contents;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@mixin txt-h1 {
+    font-family: 'Fraunces', serif;
+    text-align: center;
+}
+
+@mixin txt-p {
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    @include flex-col;
+}
+
+header {
+    width: 375px;
+    height: 538px;
+    background-image: url(./images/mobile/image-header.jpg);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 3em;
+            font-weight: 900;
+            letter-spacing: 6.25px;
+            text-transform: uppercase;
+            color: #FFFF;
+            text-align: center;
+        }
+        .menu {
+            display: flex;
+                .brand {
+                    color: #FFFF;
+                    font-size: 2em;
+                    width: 320px;
+                    height: 24px;
+                    transform: translateX(-60px);
+                }
+                img {
+                    padding: 10px;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                }
+        }
+}
+
+.top-title {
+    width: 327px;
+    height: 98px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(210px);
+        img {
+            width: 30px;
+            height: 108px;
+        }
+}
+
+h2, h3, p {
+   @include txt-h1;
+}
+
+.top-block {
+    width: 375px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color;
+    
+        h2 {
+            width: 327px;
+            height: 78px;
+            font-weight: 900;
+            font-size: 32px;
+            color: #24303E;
+            line-height: 39px;
+            transform: translateY(-30px);
+        }
+        p {
+            font-weight: 600;
+            font-size: 18px;
+            color:  #808397;
+            width: 90%;
+            line-height: 30px;
+        }
+        .learnbtn {
+            @include txt-p;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #24303E;
+            font-weight: 900;
+            text-decoration: none;
+            line-height: 25px;
+            transform: translateY(40px);
+        }
+}
+
+.egg-photo img, .cup-photo img {
+    width: 375px;
+    height: 312px;
+}
+
+.design {
+    width: 375px;
+    height: 600px;
+    background-image: url(./images/mobile/image-graphic-design.jpg);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #24554A;
+
+        h2 {
+            font-weight: 900;
+            font-size: 28px;
+            line-height: 35px;
+            letter-spacing: -0.2px;
+            transform: translateY(120px);
+        }
+        p {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 27px;
+            transform: translateY(150px);
+        }
+}
+
+.photo {
+    width: 375px;
+    height: 600px;
+    background-image: url(./images/mobile/image-photography.jpg);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+        h2 {
+            color: #052C3B;
+            font-weight: 900;
+            font-size: 28px;
+            line-height: 35px;
+            letter-spacing: -0.2px;
+            opacity: 0.75;
+            transform: translateY(-110px);
+        }
+        p {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 27px;
+            color: #19536C;
+            transform: translateY(-70px);
+        }
+}
+
+.testimonials {
+    width: 375px;
+    height: 1108px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: $background-color;
+        h3 {
+            color: #A7AAAD;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+        .people {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+                p {
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 32px;
+                    letter-spacing: -0.13px;
+                    width: 90%;
+                }
+                .name {
+                    font-size: 18px;
+                    font-weight: 900;
+                    line-height: 22px;
+                    transform: translateY(10px);
+                }
+                .job {
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 25px;
+                    color: #A7AAAD;
+                    transform: translateY(20px);
+                }
+        }
+        img {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            transform: translateY(-30px);
+        }
+}
+
+.bottom-photo {
+    width: 375px;
+    height: 375px;
+    display: block;
+    overflow: hidden;
+        .top-block-photo, .bottom-block-photo {
+            img {
+                width: 50%;
+                float: left;
+                box-sizing: border-box;
+            }
+        }
+}
+
+footer {
+    width: 375px;
+    height: 350px;
+    background-color: #90D4C6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+        p {
+            color: #2C7566;
+            font-size: 3em;
+        }
+        .social {
+            display: flex;
+            gap: 20px;
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+        }
+        nav {
+            display: flex;
+            gap: 70px;
+                a {
+                    @include txt-p;
+                    font-size: 18px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    color: #458D7E;
+                }  
+        }       
+}
